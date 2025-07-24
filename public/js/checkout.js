@@ -46,7 +46,7 @@ async function checkoutWhatsApp() {
   }
 
   try {
-    const response = await fetch('http://52.65.26.54:5000/api/products/reduce-stock', {
+    const response = await fetch('/api/products/reduce-stock', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ cart })
@@ -59,7 +59,6 @@ async function checkoutWhatsApp() {
       return;
     }
 
-    // Buat pesan WhatsApp
     let total = 0;
     let message = `Halo, saya mau pesan:\n`;
     cart.forEach(item => {
@@ -73,8 +72,7 @@ async function checkoutWhatsApp() {
 
     const phone = '6285921811396';
     const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-
-    // Kosongkan keranjang dan redirect ke WhatsApp
+    
     localStorage.removeItem('cart');
     window.open(waUrl, '_blank');
     window.location.href = "index.html";
