@@ -13,7 +13,7 @@ saveBtn.addEventListener('click', async () => {
     image: imageInput.value
   };
 
-  const res = await fetch(`/api/products/${product._id}`, {
+  const res = await fetch(`http://52.65.26.54:5000/api/products/${product._id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
@@ -35,7 +35,7 @@ deleteBtn.addEventListener('click', async () => {
     if (!confirmation) return;
 
     try {
-        const response = await fetch(`/api/products/${product._id}`, {
+        const response = await fetch(`http://52.65.26.54:5000/api/products/${product._id}`, {
             method: 'DELETE'
         });
 
