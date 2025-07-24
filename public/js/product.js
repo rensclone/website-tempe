@@ -1,5 +1,5 @@
 function loadProducts() {
-  fetch('http://52.65.26.54:5000/api/products')
+  fetch('/api/products')
     .then(res => res.json())
     .then(products => {
       const container = document.getElementById('product-list');
@@ -9,7 +9,7 @@ function loadProducts() {
         return;
       }
 
-      container.innerHTML = ""; // bersihkan isi sebelumnya
+      container.innerHTML = "";
       products.forEach(product => {
         const card = document.createElement('div');
         const isOutOfStock = product.stock <= 0;
