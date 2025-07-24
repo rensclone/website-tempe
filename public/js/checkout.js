@@ -46,7 +46,7 @@ async function checkoutWhatsApp() {
   }
 
   try {
-    const response = await fetch('http://localhost:5000/api/products/reduce-stock', {
+    const response = await fetch('http://52.65.26.54:5000/api/products/reduce-stock', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ cart })
