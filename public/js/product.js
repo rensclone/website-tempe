@@ -1,5 +1,5 @@
 function loadProducts() {
-  fetch('/api/products')
+  fetch('http://52.65.26.54:5000/api/products')
     .then(res => res.json())
     .then(products => {
       const container = document.getElementById('product-list');
